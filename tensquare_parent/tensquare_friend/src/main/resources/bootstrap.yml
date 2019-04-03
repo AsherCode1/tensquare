@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      name: friend
+      profile: dev
+      label: master
+      uri: http://192.168.12.98:12000
+

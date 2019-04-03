@@ -1,0 +1,31 @@
+server: 
+  port: 9003
+spring: 
+  application:  
+    name: tensquare-qa #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.12.98:3306/tensquare_qa?characterEncoding=UTF8
+    username: root
+    password: 123456
+  jpa: 
+    database: MySQL
+    show-sql: true
+  rabbitmq:
+    host: 192.168.12.98    
+jwt:
+  config:
+    key: itcast # salt
+    ttl: 3600000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.12.98:6868/eureka/
+  instance:
+    prefer-ip-address: true
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000     
+feign:
+  hystrix:
+    enabled: true

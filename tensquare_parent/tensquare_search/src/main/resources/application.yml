@@ -1,0 +1,11 @@
+server:
+  port: 9007
+spring:
+  application:
+    name: tensquare-search
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.12.98:9300
+      repositories:
+        enabled: true
+# 不支持Spirng Cloud Config

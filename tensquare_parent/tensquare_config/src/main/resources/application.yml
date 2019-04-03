@@ -1,0 +1,56 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: tensquare-config
+  cloud:
+    config:
+      server:
+        git:
+#           strict-host-key-checking: false
+#           uri: ssh://git@192.168.12.98:10022/root/tensquare_config.git
+###############################################################################
+           strict-host-key-checking: false
+           uri: ssh://git@192.168.12.98:10022/root/tensquare_config.git
+           ignore-local-ssh-settings: true
+           # 宿主机的私钥
+           private-key: |
+                         -----BEGIN RSA PRIVATE KEY-----
+                         MIIEogIBAAKCAQEAmAuinLQD9NlmoNihdDnHzU3pciI93RzEVgr+vhTWS4u7utUo
+                         aqu4eILSysm6yxKM74fW00IiWOedNsvqAS5RHd5PZtovrJCz2lOSxZ9Mr+Vs4BJ+
+                         su6ONTShfEnz5xCVgnJilFkASrRWjzRK03KqnGwTQUHW8JQMf242q4mLxiNEQtjk
+                         OsbX2bLQVd/ZITjiTv6TMMRdioE3fV8bOFlQi1DCBTGysacMnfOBH25k3Qm4y2By
+                         cC57d/NIfI7pQ3PEBMmpK3NzCuFCAjxXYSwwXtvrKdTJQ950Tuub9WdYKpFGb0Yx
+                         r37YqO/BTq4VGL3tjQw6R/smRbzvjieRVGeFgwIDAQABAoIBAFTnom3pZJA1WscV
+                         UcuqfHWcPXF7x5oS91ypFSomTqivJi0l3UT8Ea5SN84AKqw99q/H5mHge3e0FynD
+                         YzA3ohqQyzw/OQIfaB/SLZLn6xYKgur5yQC4kHcLpeXXEjmFHEhVAdGfhbcxz2h2
+                         phY/4SAqhfIaByIfOn9ql2LhE0mYCZpKXpJzVfQgWJmfPR+vmFYi5sAiKQz4xj4H
+                         rYoXjB/wIcOqljFxQTEwst6KtmLw+8Pwh1+XqSCpTLd9fczGa1eFfc80yieEjJvl
+                         RCAmZ4MV4iFG1BH9bGpkaP3BxgLlTqmF4tlIqeVD98GW8B6jyR2KYb3K55WYqjh8
+                         ecvKoIECgYEAynZL/zhk7DbQMqs11vRs0y245dSAELR+eZceQNCCOsAipf4pviV3
+                         l/GgaIZl82MhgZ8FyYrtyQcvsJD3zFT2FC5B19ufj9Om2NvjyE9yiOsnsYAFkEsW
+                         zvRLabl+x4RioqkMrMUEBNi7wot4X1tYxOWDR1MDNQJtskb0BLSu58MCgYEAwEBg
+                         JddbMgD7ODeBNv0UFKFH7/l/GYht3tHc90wKf2cFuMhC8i0R2uHvlU/YmOOZwOEn
+                         l+AlY9y3cLbTIQdkW1ScjklsR82hz8IHqtKq516uUeLiAkyeqm0/eqrNtmIRjqLj
+                         eEK2Z0qq3Ob97tY8RivoK+cieiAvcqggsg2Iz0ECgYAqzIMYOrWq8ZNlgqfo/taa
+                         dcnmW9uOrHkn/vgYP3uoK8GnUWlFluoHJr8AGZknsEb+/bzddA78NhawvpSDj1pN
+                         vdGRbg32+4kDwsgOKi1OIFfNwABtFlKGAUKH4PyZ9LRdKltRknxdAev/Hjid/9Nu
+                         HA56X2QIKrFBxJoE/KUUvQKBgFJ2iodQw6ZEM33emQdMMOPUdjXiD/mUwoP0AtL0
+                         hAA34YVsKQMV//WiOhESqbaS0e2g5knH9GHMV8b6NL+TGyHtviVuKwr1kjW6ZW2J
+                         ZZNO0nj/V7BiyyARMkxcnVZg5GUJS4bXHsRZi8arMjrTHBGBXdoPD4PQ8Gk+4p9d
+                         HNTBAoGAMoiTVv01WWndcF6oFOAp8rds0iL3J7nDPjIe9MeNvJvPysN1DfcHx+v9
+                         8e7F9/GTB1d8KDrJisQ7XJ3gKbB6R7dq+OVpSlcNr8QGJRJMnoM1dMxwGi9KiLvn
+                         Q36ouSZ1tfNKMz7q4YDOPRjovnqFVMsVtx5+mWy2BsVSWMyMSnQ=
+                         -----END RSA PRIVATE KEY-----
+############################################################################
+#           strict-host-key-checking: false
+#           uri: https://github.com/Codewj/tensquare.git
+#           username: codewj
+#           password: Wangjian123456
+  rabbitmq:
+    host: 192.168.12.98
+management: #暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

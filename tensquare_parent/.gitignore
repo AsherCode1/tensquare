@@ -1,0 +1,9 @@
+*.cache
+*.cache.lock
+*.iml
+*.log
+**/target
+**/logs
+.idea
+**/.project
+**/.settings
